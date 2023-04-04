@@ -1,3 +1,28 @@
-.Duelists{
-    border: 5px solid red;
+html{
+    background: url("https://e0.pxfuel.com/wallpapers/865/1011/desktop-wallpaper-ascent-valorant-map.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+
+.Agent{
+    border: solid 05px black;
+}
+.randomizerClicked{
+    animation-duration: 3s;
+    animation-name: buffering;
+    animation-iteration-count: 3;
+    
+}
+@keyframes buffering {
+    0% {background-color: aqua;}
+    100% {background-color: black;}
+}
+
+.Controllers{
+    transition: all 1s;
+}
+
+.greyOut{
+    opacity: 0.4;
 }
