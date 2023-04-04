@@ -9,7 +9,7 @@ html{
     border: solid 05px black;
 }
 .randomizerClicked{
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-name: buffering;
     animation-iteration-count: 3;
     

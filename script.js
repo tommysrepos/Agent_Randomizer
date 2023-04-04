@@ -1,8 +1,31 @@
-const valorantAgents = ["Brimstone", "Viper", "Omen", "Killjoy", "Cypher", "Sova", "Sage", "Phoenix", "Jett", "Reyna", "Raze", "Breach", "Skye", "Yoru", "Astra", "KAY/O", "Chamber", "Neon", "Fade", "Harbor", "Gekko"];
+const valorantAgents = ["Astra", "Brimstone", "Harbor", "Omen", "Viper", "Jett", "Neon", "Phoenix", "Raze", "Reyna", "Yoru", "Breach", "Fade", "Gekko", "KAY/O", "Skye", "Sova", "Chamber", "Cypher", "Killjoy", "Sage"];
+const controllerArray = valorantAgents.slice(0,5);
+const duelistArray = valorantAgents.slice(5,11);
+const initiatorArray = valorantAgents.slice(11,17);
+const sentinelArray = valorantAgents.slice(17);
+
+var controllerFilter = "";
+var duelistFilter = "";
+var initiatorFilter = "";
+var sentinelFilter = "";
 
 function agentRandomizer(){
+    if(controllerFilter == true){
+        var randomController = controllerArray[Math.floor(Math.random()*controllerArray.length)];
+    return randomController;
+    }else if(duelistFilter == true){
+        var randomDuelist = duelistArray[Math.floor(Math.random()*duelistArray.length)];
+    return randomDuelist;
+    }else if(initiatorFilter == true){
+        var randomInitiator = initiatorArray[Math.floor(Math.random()*initiatorArray.length)];
+    return randomInitiator;
+    }else if(sentinelFilter == true){
+        var randomSentinel = sentinelArray[Math.floor(Math.random()*sentinelArray.length)];
+    return randomSentinel;
+    }else{
     var randomAgent = valorantAgents[Math.floor(Math.random()*valorantAgents.length)];
     return randomAgent;
+    };
 };
 
 const container = document.querySelector('#container');
@@ -23,18 +46,34 @@ const sentinelAgents = document.querySelectorAll('.Sentinels');
 
 runRandomizer.addEventListener('click', ()=>{
     console.log(agentRandomizer());
-    agentSelector.forEach((img) => {
-        img.classList.add('randomizerClicked');
-    })
-    if(controllersSelected.clicked == true){
-        controllerAgents.classList.remove('randomizerClicked')
-    };
+    if(controllerFilter == true){
+        controllerAgents.forEach((controllerAgents)=>{
+            controllerAgents.classList.add('randomizerClicked');
+        })
+    }else if(duelistFilter == true){
+        duelistAgents.forEach((duelistAgents)=>{
+            duelistAgents.classList.add('randomizerClicked');
+        })
+    }else if(initiatorFilter == true){
+        initiatorAgents.forEach((initiatorAgents)=>{
+            initiatorAgents.classList.add('randomizerClicked');
+        })
+    }else if(sentinelFilter == true){
+        sentinelAgents.forEach((sentinelAgents)=>{
+            sentinelAgents.classList.add('randomizerClicked');
+        })
+    }else{
+        agentSelector.forEach((img) => {
+            img.classList.add('randomizerClicked');
+        })
+    }
 });
 
 controllersSelected.addEventListener('click', ()=>{
     duelistAgents.forEach((duelistAgents)=>{
         duelistAgents.classList.toggle('greyOut');
     })
+     controllerFilter = true;
 });
 controllersSelected.addEventListener('click', ()=>{
     initiatorAgents.forEach((initiatorAgents)=>{
@@ -56,6 +95,7 @@ duelistsSelected.addEventListener('click', ()=>{
     controllerAgents.forEach((controllerAgents)=>{
         controllerAgents.classList.toggle('greyOut');
     })
+    duelistFilter = true;
 });
 duelistsSelected.addEventListener('click', ()=>{
     initiatorAgents.forEach((initiatorAgents)=>{
@@ -77,6 +117,7 @@ initiatorsSelected.addEventListener('click', ()=>{
     duelistAgents.forEach((duelistAgents)=>{
         duelistAgents.classList.toggle('greyOut');
     })
+    initiatorFilter = true;
 });
 initiatorsSelected.addEventListener('click', ()=>{
     controllerAgents.forEach((controllerAgents)=>{
@@ -98,6 +139,7 @@ sentinelsSelected.addEventListener('click', ()=>{
     duelistAgents.forEach((duelistAgents)=>{
         duelistAgents.classList.toggle('greyOut');
     })
+    sentinelFilter = true;
 });
 sentinelsSelected.addEventListener('click', ()=>{
     initiatorAgents.forEach((initiatorAgents)=>{
