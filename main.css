@@ -12,17 +12,46 @@ html{
     animation-duration: 1s;
     animation-name: buffering;
     animation-iteration-count: 3;
-    
 }
 @keyframes buffering {
     0% {background-color: aqua;}
     100% {background-color: black;}
 }
 
+input{
+    transition: all 1s;
+}
+
 .Controllers{
+    transition: all 1s;
+}
+
+.Duelists{
+    transition: all 1s;
+}
+
+.Initiators{
+    transition: all 1s;
+}
+
+.Sentinels{
     transition: all 1s;
 }
 
 .greyOut{
     opacity: 0.4;
+}
+
+p{
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 2900ms;
+}
+
+.delayDisplay{
+    opacity: 1;
+}
+
+#agentHeadShots{
+    display: flex;
 }

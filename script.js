@@ -1,3 +1,22 @@
+const container = document.querySelector('#container');
+const displayRandomlySelectedAgent = document.createElement('p');
+container.appendChild(displayRandomlySelectedAgent);
+
+const agentSelector = document.querySelectorAll('.Agent');
+const runRandomizer = document.querySelector('#randomizer');
+
+const controllersSelected = document.querySelector('#selectControllers');
+const controllerAgents = document.querySelectorAll('.Controllers');
+
+const duelistsSelected = document.querySelector('#selectDuelists');
+const duelistAgents = document.querySelectorAll('.Duelists');
+
+const initiatorsSelected = document.querySelector('#selectInitiators');
+const initiatorAgents = document.querySelectorAll('.Initiators');
+
+const sentinelsSelected = document.querySelector('#selectSentinels');
+const sentinelAgents = document.querySelectorAll('.Sentinels');
+
 const valorantAgents = ["Astra", "Brimstone", "Harbor", "Omen", "Viper", "Jett", "Neon", "Phoenix", "Raze", "Reyna", "Yoru", "Breach", "Fade", "Gekko", "KAY/O", "Skye", "Sova", "Chamber", "Cypher", "Killjoy", "Sage"];
 const controllerArray = valorantAgents.slice(0,5);
 const duelistArray = valorantAgents.slice(5,11);
@@ -8,6 +27,8 @@ var controllerFilter = "";
 var duelistFilter = "";
 var initiatorFilter = "";
 var sentinelFilter = "";
+var randomizedAgent = "";
+displayRandomlySelectedAgent.textContent = "";
 
 function agentRandomizer(){
     if(controllerFilter == true){
@@ -28,24 +49,8 @@ function agentRandomizer(){
     };
 };
 
-const container = document.querySelector('#container');
-const agentSelector = document.querySelectorAll('.Agent');
-const runRandomizer = document.querySelector('#randomizer');
-
-const controllersSelected = document.querySelector('#selectControllers');
-const controllerAgents = document.querySelectorAll('.Controllers');
-
-const duelistsSelected = document.querySelector('#selectDuelists');
-const duelistAgents = document.querySelectorAll('.Duelists');
-
-const initiatorsSelected = document.querySelector('#selectInitiators');
-const initiatorAgents = document.querySelectorAll('.Initiators');
-
-const sentinelsSelected = document.querySelector('#selectSentinels');
-const sentinelAgents = document.querySelectorAll('.Sentinels');
-
 runRandomizer.addEventListener('click', ()=>{
-    console.log(agentRandomizer());
+    randomizedAgent = agentRandomizer();
     if(controllerFilter == true){
         controllerAgents.forEach((controllerAgents)=>{
             controllerAgents.classList.add('randomizerClicked');
@@ -66,6 +71,12 @@ runRandomizer.addEventListener('click', ()=>{
         agentSelector.forEach((img) => {
             img.classList.add('randomizerClicked');
         })
+    }
+
+    displayRandomlySelectedAgent.textContent = "Lock in " + `${randomizedAgent}` + "!";
+    displayRandomlySelectedAgent.classList.add('delayDisplay');
+    if(randomizedAgent == "Astra"){
+      
     }
 });
 
