@@ -1,13 +1,93 @@
+/* General Styles */
+
 html{
-    background: url("https://e0.pxfuel.com/wallpapers/865/1011/desktop-wallpaper-ascent-valorant-map.jpg");
     height: 100%;
     width: 100%;
     background-position: center;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #e6e6e6;
+}
+
+/* Styles related to the Header */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #081017;
+}
+
+.right-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Styles related to the Title Container */
+
+.title-container {
+    background-color: #081017;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.title-container h1 {
+    color: #e6e6e6;
+}
+
+.title-container h2 {
+    color: #e6e6e6;
+    opacity: 1;
+}
+/* Styles related to content */
+
+.content {
+    background-color: #323c44;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.randomizer-border {
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#agentHeadshots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .Agent{
     border: solid 05px black;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#randomizer {
+    padding: 20px 30px;
+}
+
 .randomizerClicked{
     animation-duration: 1s;
     animation-name: buffering;
@@ -17,6 +97,8 @@ html{
     0% {background-color: aqua;}
     100% {background-color: black;}
 }
+
+/* All styles related to transitions */
 
 input{
     transition: all 1s;

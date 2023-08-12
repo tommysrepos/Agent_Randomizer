@@ -1,5 +1,18 @@
 # Agent_Randomizer
-Valorant agent randomizer changelog
+TODO:
+- Fix inconsistent use of classes and ID. Fix inconsistent naming of classes and IDs.
+
+- Fix bug where it will only filter based on your first role selection and not if you choose a different role afterwards.
+
+- Continue styling.
+
+#############################################################
+
+Valorant agent randomizer changelog:
+
+Changed layout to flexbox. began styling.
+
+Aug11/23: Changed all agent icon and role filter img src from Wikipedia link to png files.
 
 Apr05/23: Added DOM method that creates p tag and textcontent. Text is a template literal which states the result of randomAgent. randomAgent stores the return value of agentRandomizer().
 
